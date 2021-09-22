@@ -1,0 +1,16 @@
+name: 'Bump Version'
+description: 'Bump version for releases creating and pushin tags properly incremented according the inputs'
+inputs:
+  environment:
+    description: 'Which environment to run (dev, qa, sandbox and prod)'
+    required: true
+  type:
+    description: 'The type of change (major, minor, patch)'
+    required: true
+outputs:
+  previous-version:
+    description: 'The version that was before the bump'
+  new-version:
+    description: 'The new version after the bump'
+runs: 'node12'
+main: 'index.js'
