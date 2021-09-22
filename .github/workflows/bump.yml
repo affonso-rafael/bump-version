@@ -1,0 +1,14 @@
+on: [push]
+
+jobs:
+  hello_world_job:
+    runs-on: ubuntu-latest
+    name: bump version
+    steps:
+      - name: generate tag
+        id: hello
+        uses: affonso-rafael/bump-version@v0.0.4
+        with:
+          environment: 'dev'
+          type: 'major'
+          token: '${{ secrets.GITHUB_TOKEN }}'
