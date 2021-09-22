@@ -12,6 +12,10 @@ This action bumps version tags.
 
 **Required** The type of bump to run (`major`, `minor` or `patch`.
 
+## `type`
+
+**Required** A GitHub access token (PAT) with write access to the repo in question. (`major`, `minor` or `patch`.
+
 ## Outputs
 
 ## `previous-version`

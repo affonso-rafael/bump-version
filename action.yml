@@ -2,10 +2,13 @@ name: 'Bump Version'
 description: 'Bump version for releases creating and pushin tags properly incremented according the inputs'
 inputs:
   environment:
-    description: 'Which environment to run (dev, qa, sandbox and prod)'
+    description: 'Which environment to run (dev, qa, sandbox and prod).'
     required: true
   type:
-    description: 'The type of change (major, minor, patch)'
+    description: 'The type of change (major, minor, patch).'
+    required: true
+  token:
+    description: 'A GitHub access token (PAT) with write access to the repo in question.'
     required: true
 outputs:
   previous-version:
