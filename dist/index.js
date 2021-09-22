@@ -379,7 +379,7 @@ function run() {
         const repo = github.context.repo.repo;
         // Get octokit client for making API calls
         const octokit = github.getOctokit(token);
-        const tags = yield octokit.request(`GET /repos/${owner}/${repo}/git/tags/`);
+        const tags = yield octokit.request(`GET /repos/${owner}/${repo}/git/tags/`).catch(e => console.log(e));
         console.log(tags);
         // Get the JSON webhook payload for the event that triggered the workflow
         const payload = JSON.stringify(github.context.payload, undefined, 2);
