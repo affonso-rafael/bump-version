@@ -1,7 +1,7 @@
 import * as core from "@actions/core";
 import * as github from "@actions/github";
 
-async function run() {
+async function run(): Promise<void> {
     const token = core.getInput('token');
     const env = core.getInput('envirnment');
     const type = core.getInput('type');
@@ -22,7 +22,7 @@ async function run() {
 }
 
 try {
-    run()
-} catch (error) {
-    core.setFailed(error.message);
+    run()   
+} catch (error: any) {
+    core.setFailed(error.message)
 }

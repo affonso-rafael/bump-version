@@ -13,4 +13,4 @@ outputs:
   new-version:
     description: 'The new version after the bump'
 runs: 'node12'
-main: 'index.js'
+main: 'dist/index.js'
