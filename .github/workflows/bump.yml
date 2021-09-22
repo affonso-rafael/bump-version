@@ -1,3 +1,5 @@
+name: Bump version
+
 on: [push]
 
 jobs:
@@ -7,7 +9,7 @@ jobs:
     steps:
       - name: generate tag
         id: hello
-        uses: affonso-rafael/bump-version@v0.0.4
+        uses: affonso-rafael/bump-version@v0.0.5
         with:
           environment: 'dev'
           type: 'major'
