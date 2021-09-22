@@ -12,7 +12,7 @@ async function run(): Promise<void> {
   // Get octokit client for making API calls
   const octokit = github.getOctokit(token)
 
-  const tags = await octokit.request(`GET /repos/${owner}/${repo}/git/tags/`)
+  const tags = await octokit.request(`GET /repos/${owner}/${repo}/git/tags/`).catch(e => console.log(e))
   console.log(tags)
 
 
