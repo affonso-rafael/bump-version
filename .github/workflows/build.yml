@@ -8,16 +8,23 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - name: Check out repository
-      uses: actions/checkout@v2
+      - name: Check out repository
+        uses: actions/checkout@v2
+        with:
+          repository: affonso-rafael/test
+          path: test
+        run: echo "my sha is $(git rev-parse HEAD)"
 
-    - name: Build
-      run: |
-        npm install
-        npm run build
+    # - name: Check out repository
+    #   uses: actions/checkout@v2
 
-    - name: Update repo with build
-      uses: mikeal/publish-to-github-action@master
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        BRANCH_NAME: 'main'
+    # - name: Build
+    #   run: |
+    #     npm install
+    #     npm run build
+
+    # - name: Update repo with build
+    #   uses: mikeal/publish-to-github-action@master
+    #   env:
+    #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    #     BRANCH_NAME: 'main'
