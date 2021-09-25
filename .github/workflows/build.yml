@@ -14,8 +14,12 @@ jobs:
           repository: affonso-rafael/test
           path: test
 
+      - name: register key
+        id: reg
+        run: echo "::set-output name=sha::$(git rev-parse HEAD)"
+      
       - name: get key
-        run: echo "my sha is $(git rev-parse HEAD)"
+        run: echo "sha is ${{steps.reg.outputs.sha}}"
 
     # - name: Check out repository
     #   uses: actions/checkout@v2
