@@ -13,6 +13,8 @@ jobs:
         with:
           repository: affonso-rafael/test
           path: test
+
+      - name: get key
         run: echo "my sha is $(git rev-parse HEAD)"
 
     # - name: Check out repository
