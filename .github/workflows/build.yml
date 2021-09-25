@@ -15,6 +15,7 @@ jobs:
           path: test
 
       - name: register key
+        working-directory: test
         id: reg
         run: echo "::set-output name=sha::$(git rev-parse HEAD)"
       
