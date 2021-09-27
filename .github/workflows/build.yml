@@ -28,7 +28,7 @@ jobs:
           cache-name: cache-perfil
         with:
           path: perfil
-          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ (git rev-parse HEAD) }}
+          key: "${{ runner.os }}-build-${{ env.cache-name }}-$(git rev-parse HEAD)"
 
     # - name: Check out repository
     #   uses: actions/checkout@v2
