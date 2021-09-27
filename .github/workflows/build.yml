@@ -22,6 +22,14 @@ jobs:
       - name: get key
         run: echo "sha is ${{steps.reg.outputs.sha}}"
 
+      - name: Cache teste
+        uses: actions/cache@v2
+        env:
+          cache-name: cache-perfil
+        with:
+          path: perfil
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ $(git rev-parse HEAD) }}
+
     # - name: Check out repository
     #   uses: actions/checkout@v2
 
